@@ -1,11 +1,11 @@
-./bin/discriminant: ./obj/main.o ./obj/discriminant.o ./bin
-	gcc -c ./obj/main.o ./obj/discriminant.o -o ./bin/discriminant
+﻿./bin/discriminant: ./obj/main.o ./obj/discriminant.o ./bin
+	g++ ./obj/main.o ./obj/discriminant.o -o ./bin/discriminant
 
 ./obj/main.o: ./src/main.c ./obj
-	gcc -c ./src/main.c -o ./obj/main.o -Wall
+	g++ -c ./src/main.c -o ./obj/main.o -Wall
 
 ./obj/discriminant.o: ./src/discriminant.c ./obj
-	gcc -c ./src/discriminant.c -o ./obj/discriminant.o -Wall
+	g++ -c ./src/discriminant.c -o ./obj/discriminant.o -Wall
 
 ./bin:  
 	mkdir bin
@@ -13,6 +13,6 @@
 ./obj: 
 	mkdir obj
 
-#.PHONY: clean
-#clean:
-#	rm -f -r bin/ obj/
+.PHONY: clean
+clean:
+	rm -f -r bin/ obj/
